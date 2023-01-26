@@ -1,9 +1,10 @@
 import './App.css';
+import Board from './components/Board/Board.js';
 
 function App() {
   return (
     <div className="App">
-      <p>THIS WILL BE A GAME</p>
+      <Board />
     </div>
   );
 }
