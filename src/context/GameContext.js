@@ -3,7 +3,7 @@ const GameContext = createContext();
 const GameProvider = ({ children }) => {
   // in here we can define any state variables we want to use
   const [board, setBoard] = useState([
-    { space: 0, content: '' },
+    { space: 0, content: 'x' },
     { space: 1, content: '' },
     { space: 2, content: '' },
     { space: 3, content: '' },
