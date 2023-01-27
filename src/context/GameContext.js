@@ -15,14 +15,13 @@ const GameProvider = ({ children }) => {
   ]);
   const handleClick = (space) => {
     const newBoard = board.map((box) => {
-      if (box.space === space && box.content === '') {
+      if (box.space === space && box.content === '' && active === true) {
         box.content = current;
         current === 'X' ? setCurrent('O') : setCurrent('X');
       }
       return box;
     });
     setBoard(newBoard);
-    // current === 'X' ? setCurrent('O') : setCurrent('X');
   };
 
   const [current, setCurrent] = useState('X');
