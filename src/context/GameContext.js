@@ -13,12 +13,32 @@ const GameProvider = ({ children }) => {
     { space: 7, content: '' },
     { space: 8, content: '' },
   ]);
+  const handleClick = (space) => {
+    const newBoard = board.map((box) => {
+      if (box.space === space) box.content = current;
+      return box;
+    });
+    setBoard(newBoard);
+
+    current === 'X' ? setCurrent('O') : setCurrent('X');
+  };
+
   const [current, setCurrent] = useState('X');
   const [active, setActive] = useState(true);
   const [message, setMessage] = useState('');
   return (
     <GameContext.Provider
-      value={{ board, setBoard, current, setCurrent, active, setActive, message, setMessage }}
+      value={{
+        board,
+        setBoard,
+        current,
+        setCurrent,
+        active,
+        setActive,
+        message,
+        setMessage,
+        handleClick,
+      }}
     >
       {children}
     </GameContext.Provider>
@@ -36,7 +56,3 @@ const useGameContext = () => {
 };
 
 export { GameProvider, useGameContext };
-
-export function handleClick() {
-  console.log('click!');
-}
