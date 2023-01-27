@@ -3,7 +3,7 @@ const GameContext = createContext();
 const GameProvider = ({ children }) => {
   // in here we can define any state variables we want to use
   const [board, setBoard] = useState([
-    { space: 0, content: 'x' },
+    { space: 0, content: '' },
     { space: 1, content: '' },
     { space: 2, content: '' },
     { space: 3, content: '' },
@@ -15,12 +15,14 @@ const GameProvider = ({ children }) => {
   ]);
   const handleClick = (space) => {
     const newBoard = board.map((box) => {
-      if (box.space === space) box.content = current;
+      if (box.space === space && box.content === '') {
+        box.content = current;
+        current === 'X' ? setCurrent('O') : setCurrent('X');
+      }
       return box;
     });
     setBoard(newBoard);
-
-    current === 'X' ? setCurrent('O') : setCurrent('X');
+    // current === 'X' ? setCurrent('O') : setCurrent('X');
   };
 
   const [current, setCurrent] = useState('X');
