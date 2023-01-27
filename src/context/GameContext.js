@@ -36,3 +36,7 @@ const useGameContext = () => {
 };
 
 export { GameProvider, useGameContext };
+
+export function handleClick() {
+  console.log('click!');
+}
