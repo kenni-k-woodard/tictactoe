@@ -13,6 +13,7 @@ const GameProvider = ({ children }) => {
     { space: 7, content: '' },
     { space: 8, content: '' },
   ]);
+
   const handleClick = (space) => {
     const newBoard = board.map((box) => {
       if (box.space === space && box.content === '' && active === true) {
