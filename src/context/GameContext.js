@@ -32,49 +32,49 @@ const GameProvider = ({ children }) => {
       (board[0].content !== '') &
       (board[0].content === board[2].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
     if (
       (board[3].content === board[4].content) &
       (board[3].content !== '') &
       (board[3].content === board[5].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
     if (
       (board[6].content === board[7].content) &
       (board[6].content !== '') &
       (board[6].content === board[8].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
     if (
       (board[0].content === board[3].content) &
       (board[0].content !== '') &
       (board[0].content === board[6].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
     if (
       (board[1].content === board[4].content) &
       (board[1].content !== '') &
       (board[1].content === board[7].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
     if (
       (board[2].content === board[5].content) &
       (board[2].content !== '') &
       (board[2].content === board[8].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
     if (
       (board[2].content === board[4].content) &
       (board[2].content !== '') &
       (board[2].content === board[6].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
     if (
       (board[0].content === board[4].content) &
       (board[0].content !== '') &
       (board[0].content === board[8].content)
     )
-      setActive(false);
+      setActive(false) & alert(`${current} wins!`);
   };
 
   const kitten = () => {
@@ -87,9 +87,10 @@ const GameProvider = ({ children }) => {
       (board[5].content !== '') &
       (board[6].content !== '') &
       (board[7].content !== '') &
-      (board[8].content !== '')
+      (board[8].content !== '') &
+      setActive(true)
     )
-      setActive(false);
+      alert('No winners here!') & setActive(false);
   };
 
   const [current, setCurrent] = useState('X');
