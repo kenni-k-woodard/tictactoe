@@ -1,0 +1,7 @@
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: solid yellow 2px;
+  width: 600px;
+  height: 600px;
+}
